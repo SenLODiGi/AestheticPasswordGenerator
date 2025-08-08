@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="64" fill="#0a0e17"/>
+  
+  <!-- Shield Outline -->
+  <path d="M256 96c-88 0-160 32-160 32v128c0 71 80 128 160 160 80-32 160-89 160-160V128s-72-32-160-32z" fill="none" stroke="#0066ff" stroke-width="16" stroke-linejoin="round"/>
+  
+  <!-- Lock Body -->
+  <rect x="192" y="224" width="128" height="112" rx="16" fill="#00ff9d"/>
+  
+  <!-- Lock Shackle -->
+  <path d="M320 224v-48c0-35.3-28.7-64-64-64s-64 28.7-64 64v48" fill="none" stroke="#00ff9d" stroke-width="24" stroke-linecap="round"/>
+  
+  <!-- Keyhole -->
+  <circle cx="256" cy="272" r="24" fill="#0a0e17"/>
+  <path d="M256 272v32" stroke="#0a0e17" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Digital Circuit Lines -->
+  <path d="M128 160h32M352 160h32M128 192h16M368 192h16M144 224h16M352 224h16M128 256h32M352 256h32M128 288h32M352 288h32" stroke="#0066ff" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Glow Effect -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="#00ff9d" stroke-width="2" opacity="0.3">
+    <animate attributeName="r" values="180;190;180" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg>

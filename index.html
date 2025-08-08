@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthetic Password Generator | Senith Samaranayake</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="app-wrapper">
+            <!-- Header Section -->
+            <header>
+                <div class="header-content">
+                    <div class="logo">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h1>SECURE<span>PASS</span></h1>
+                    <div class="status-indicator">
+                        <div class="status-dot"></div>
+                        <span>SYSTEM ONLINE</span>
+                    </div>
+                </div>
+                <div class="header-decoration">
+                    <div class="decoration-line"></div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main>
+                <!-- Password Output Section -->
+                <section class="password-output-section">
+                    <div class="output-container">
+                        <div class="output-header">
+                            <span>GENERATED PASSWORD</span>
+                            <div class="security-level">
+                                <span class="level-indicator">SECURITY LEVEL:</span>
+                                <span class="level-value">MEDIUM</span>
+                            </div>
+                        </div>
+                        <div class="password-display">
+                            <span id="password-result">P@s$w0rd1234</span>
+                            <button id="copy-btn" title="Copy to clipboard">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        <div class="strength-meter">
+                            <div class="strength-bar">
+                                <div class="strength-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Password Controls Section -->
+                <section class="password-controls-section">
+                    <div class="control-panel">
+                        <h2>PASSWORD PARAMETERS</h2>
+                        
+                        <!-- Length Control -->
+                        <div class="control-group">
+                            <div class="control-header">
+                                <label for="length-slider">LENGTH</label>
+                                <span id="length-value">12</span>
+                            </div>
+                            <div class="slider-container">
+                                <input type="range" id="length-slider" min="6" max="24" value="12">
+                                <div class="slider-ticks">
+                                    <span>6</span>
+                                    <span>12</span>
+                                    <span>18</span>
+                                    <span>24</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Character Types -->
+                        <div class="control-group">
+                            <div class="control-header">
+                                <label>CHARACTER TYPES</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="uppercase" checked>
+                                    <label for="uppercase">ABC</label>
+                                </div>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="lowercase" checked>
+                                    <label for="lowercase">abc</label>
+                                </div>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="numbers" checked>
+                                    <label for="numbers">123</label>
+                                </div>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="symbols" checked>
+                                    <label for="symbols">!@#</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Keywords Section -->
+                        <div class="control-group">
+                            <div class="control-header">
+                                <label for="keywords-input">KEYWORDS</label>
+                                <div class="keyword-toggle">
+                                    <input type="checkbox" id="use-keywords" checked>
+                                    <label for="use-keywords">USE</label>
+                                    <input type="checkbox" id="beautify-keywords" checked>
+                                    <label for="beautify-keywords">BEAUTIFY</label>
+                                </div>
+                            </div>
+                            <div class="keywords-container">
+                                <input type="text" id="keywords-input" placeholder="Enter up to 3 keywords separated by commas (e.g., Ocean, Moon, Tiger)">
+                                <div class="keywords-display" id="keywords-display">
+                                    <span class="keyword-tag">Ocean</span>
+                                    <span class="keyword-tag">Moon</span>
+                                    <span class="keyword-tag">Tiger</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Difficulty Presets -->
+                        <div class="control-group">
+                            <div class="control-header">
+                                <label>DIFFICULTY PRESET</label>
+                            </div>
+                            <div class="preset-buttons">
+                                <button id="easy-preset" class="preset-btn">EASY</button>
+                                <button id="medium-preset" class="preset-btn active">MEDIUM</button>
+                                <button id="strong-preset" class="preset-btn">STRONG</button>
+                            </div>
+                        </div>
+
+                        <!-- Generate Button -->
+                        <div class="control-group">
+                            <button id="generate-btn" class="generate-button">
+                                <span>GENERATE PASSWORD</span>
+                                <i class="fas fa-bolt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About Solution Section -->
+                <section class="about-section">
+                    <div class="about-container">
+                        <div class="about-header">
+                            <h2>ABOUT SOLUTION</h2>
+                            <div class="header-decoration">
+                                <div class="decoration-line"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="about-content">
+                            <div class="solution-info">
+                                <div class="info-block">
+                                    <h3><i class="fas fa-shield-alt"></i> SECURITY FEATURES</h3>
+                                    <ul>
+                                        <li>Customizable password length (6-24 characters)</li>
+                                        <li>Multiple character sets: uppercase, lowercase, numbers, symbols</li>
+                                        <li>Real-time password strength analysis</li>
+                                        <li>Keyword-based password generation with beautification</li>
+                                        <li>Secure random generation algorithms</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="info-block">
+                                    <h3><i class="fas fa-code"></i> TECHNOLOGIES</h3>
+                                    <ul>
+                                        <li>HTML5 for semantic structure</li>
+                                        <li>CSS3 with advanced animations</li>
+                                        <li>Vanilla JavaScript for functionality</li>
+                                        <li>Font Awesome icons</li>
+                                        <li>Google Fonts (Poppins & Share Tech Mono)</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="info-block">
+                                    <h3><i class="fas fa-palette"></i> DESIGN PHILOSOPHY</h3>
+                                    <ul>
+                                        <li>Cybersecurity-inspired aesthetic</li>
+                                        <li>Matrix-style animated background</li>
+                                        <li>Responsive and mobile-friendly</li>
+                                        <li>Typewriter and fade-in animations</li>
+                                        <li>Intuitive user experience</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="developer-info">
+                                <div class="developer-card">
+                                    <div class="developer-image">
+                                       <img src="assets/developer.png" alt="Developer">
+                                    </div>
+                                    <div class="developer-details">
+                                        <h3>SENITH SAMARANAYAKE</h3>
+                                        <p class="role">Developer & Vibe AI Programmer</p>
+                                        <div class="skills">
+                                            <span class="skill-tag">HTML</span>
+                                            <span class="skill-tag">CSS</span>
+                                            <span class="skill-tag">JavaScript</span>
+                                            <span class="skill-tag">Figma</span>
+                                            <span class="skill-tag">UX Design</span>
+                                        </div>
+                                        <div class="developer-links">
+                                            <a href="https://github.com/SenLODiGi" target="_blank">
+                                                <i class="fab fa-github"></i> GitHub
+                                            </a>
+                                            <a href="https://linktr.ee/senith_samaranayake" target="_blank">
+                                                <i class="fas fa-link"></i> LinkTree
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Footer Section -->
+            <footer>
+                <div class="footer-content">
+                    <p>© 2025 Senith Samaranayake | <a href="https://github.com/SenLODiGi" target="_blank"><i class="fab fa-github"></i> GitHub</a> | <a href="https://linktr.ee/senith_samaranayake" target="_blank"><i class="fas fa-link"></i> LinkTree</a></p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Matrix Canvas Background -->
+    <canvas id="matrix-bg"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
